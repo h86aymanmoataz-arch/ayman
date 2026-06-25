@@ -1,0 +1,206 @@
+/* ============================================================
+   SOFTAWARE DESIGN SYSTEM (V2 - Light Premium)
+   Inspired by: "Scappa" aesthetic — clean, bright, highly professional.
+   ============================================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Primary Brand — Vibrant Indigo (Scappa style) */
+  --indigo-primary: #5A52FF;
+  --indigo-light: #EBEBFF;
+  --indigo-dark: #3F37E0;
+  --indigo-glow: rgba(90, 82, 255, 0.15);
+
+  /* Neutrals — Light theme foundations */
+  --slate-900: #111827; /* Very dark text */
+  --slate-800: #1F2937;
+  --slate-600: #4B5563; /* Body text */
+  --slate-400: #9CA3AF;
+  --slate-200: #E5E7EB; /* Borders */
+  --slate-100: #F3F4F6; /* Alt backgrounds */
+  --slate-50:  #F9FAFB; /* Soft background */
+
+  /* Backgrounds */
+  --bg-white: #FFFFFF;
+  --bg-surface: #F9FAFB; /* Slightly off-white */
+  --bg-dark: #111827; /* For bottom CTA section */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #5A52FF 100%);
+  --gradient-subtle: linear-gradient(180deg, rgba(249, 250, 251, 0) 0%, #F9FAFB 100%);
+  --gradient-cta: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 2rem;      /* 32px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3.5rem;    /* 56px */
+  --text-6xl: 4.5rem;    /* 72px */
+
+  /* Line heights */
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Spacing system (8px grid) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-section: 6rem;/* 96px */
+
+  /* Border radius — large, friendly corners */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows — Soft and diffuse (the secret to premium light themes) */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.03);
+  --shadow-xl: 0 20px 40px -5px rgba(0,0,0,0.06); /* For floating UI cards */
+  --shadow-indigo: 0 10px 25px -5px rgba(90, 82, 255, 0.4); /* For primary buttons */
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--slate-600); /* Dark gray, not black, for body text */
+  background: var(--bg-white);
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  color: var(--slate-900); /* Almost black for headings */
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, var(--text-6xl)); }
+h2 { font-size: clamp(2rem, 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(1.5rem, 3vw, var(--text-2xl)); font-weight: 700; }
+h4 { font-size: var(--text-xl); font-weight: 700; }
+
+p { margin-bottom: var(--space-4); }
+
+a {
+  color: var(--indigo-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+a:hover { color: var(--indigo-dark); }
+
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+
+/* ---------- Layout Utilities ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.section {
+  padding: var(--space-section) 0;
+  position: relative;
+}
+
+.section-surface {
+  background: var(--bg-surface);
+}
+
+.section-dark {
+  background: var(--bg-dark);
+  color: var(--slate-400);
+}
+.section-dark h1, .section-dark h2, .section-dark h3 {
+  color: var(--bg-white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-16);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Flex / Grid */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+.gap-12 { gap: var(--space-12); }
+
+.grid { display: grid; gap: var(--space-6); }
+
+/* Text Utils */
+.text-center { text-align: center; }
+.text-indigo { color: var(--indigo-primary); }
+.text-muted { color: var(--slate-400); }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .md\:grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .md\:flex-row { flex-direction: row; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
