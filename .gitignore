@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Build artifacts
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing
+coverage/
+
+# Misc
+*.pem
+.vercel
+
+# Reference files (not needed in repo)
+inspire/
+old ui ux/
+animation start website/
+*.mp4
+SoftAware_ClaudeCode_Prompt.md
+DESIGN_DECISIONS.md
+serve.py
+static/
+templates/
